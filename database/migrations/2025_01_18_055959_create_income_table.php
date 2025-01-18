@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('withdraws', function (Blueprint $table) {
+        Schema::create('incomes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('wish_id')->constrained('wishes')->cascadeOnDelete();
             $table->float('nominal');
+            $table->foreignId('balance_id')->constrained('balances')->cascadeOnDelete();
             $table->string('description')->nullable();
-            $table->date('date');
+            $table->date('date')->default(date('Y-m-d'));
             $table->timestamps();
         });
     }

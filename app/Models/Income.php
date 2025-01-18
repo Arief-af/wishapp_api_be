@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Withdraw extends Model
+class Income extends Model
 {
     protected $guarded = ['id'];
-    public function wish()
+    public function balance()
     {
-        return $this->belongsTo(Wish::class);
+        return $this->belongsTo(Balance::class);
     }
 }

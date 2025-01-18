@@ -26,6 +26,7 @@ class BalanceController extends Controller
                 'user_id' => Auth::user()->id,
                 'nominal' => 0
             ]);
+            return response()->json(Auth::user()->balance);
         }
     }
 }
