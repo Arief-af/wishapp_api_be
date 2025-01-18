@@ -36,5 +36,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/history', [UserController::class, 'index']);
     Route::get('/incomes', [IncomeController::class, 'index']);
     Route::post('/incomes', [IncomeController::class, 'store']);
+    Route::put('user/update', [UserController::class, 'update']);
 });
 
+Route::put('user/recovery', [UserController::class, 'recovery']);
